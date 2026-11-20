@@ -1,0 +1,211 @@
+.alterar-salario__overlay {
+  --as-roxo: #4f52e0;
+  --as-roxo-caixa: #eef0fc;
+  --as-texto: #1e2140;
+  --as-suave: #7a7f9a;
+  --as-borda: #e3e5f0;
+  --as-erro: #d9534f;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.alterar-salario__overlay *,
+.alterar-salario__overlay *::before,
+.alterar-salario__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card ----- */
+.alterar-salario {
+  width: 464px;
+  max-width: 100%;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.alterar-salario__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alterar-salario__icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--as-roxo-caixa);
+  color: var(--as-roxo);
+  display: grid;
+  place-items: center;
+}
+
+.alterar-salario__fechar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #6b7090;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.alterar-salario__fechar:hover {
+  color: var(--as-texto);
+  background: #f0f1f8;
+}
+
+.alterar-salario__titulo {
+  margin-top: 23px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--as-texto);
+}
+
+.alterar-salario__subtitulo {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--as-suave);
+}
+
+/* ----- Formulário ----- */
+.alterar-salario__form {
+  margin-top: 24px;
+}
+
+.alterar-salario__grupo label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--as-texto);
+}
+
+.alterar-salario__grupo--dia {
+  margin-top: 16px;
+}
+
+/* ----- Campo de salário ----- */
+.alterar-salario__valor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+  padding: 0 16px;
+  border: 1px solid var(--as-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.alterar-salario__valor:focus-within {
+  border-color: var(--as-roxo);
+  box-shadow: 0 0 0 1px var(--as-roxo);
+}
+
+.alterar-salario__moeda {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--as-suave);
+}
+
+.alterar-salario__valor-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--as-texto);
+}
+
+.alterar-salario__valor-input::placeholder {
+  color: #c4c7d9;
+}
+
+/* ----- Campo de dia ----- */
+.alterar-salario__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--as-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--as-texto);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.alterar-salario__input::placeholder {
+  color: var(--as-suave);
+}
+
+.alterar-salario__input:focus {
+  border-color: var(--as-roxo);
+  box-shadow: 0 0 0 1px var(--as-roxo);
+}
+
+.alterar-salario__input--erro,
+.alterar-salario__input--erro:focus {
+  border-color: var(--as-erro);
+  box-shadow: 0 0 0 1px var(--as-erro);
+}
+
+/* ----- Botões ----- */
+.alterar-salario__botao {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--as-roxo);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.alterar-salario__botao:hover:not(:disabled) {
+  background: #3d43c4;
+}
+
+.alterar-salario__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.alterar-salario__botao--cancelar {
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid var(--as-borda);
+  color: #5a5f80;
+}
+
+.alterar-salario__botao--cancelar:hover:not(:disabled) {
+  background: #ffffff;
+  border-color: var(--as-roxo);
+  color: var(--as-roxo);
+}

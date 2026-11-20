@@ -1,0 +1,327 @@
+/* src/estilos/Exportar.css */
+
+/* ── Página = NavBar + conteúdo ───────────────────────────────────────── */
+
+.exportar-pagina {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f7fc;
+  font-family: "Inter", sans-serif;
+  color: #1f2140;
+}
+
+.exportar-conteudo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 40px;
+  box-sizing: border-box;
+}
+
+/* ── Cabeçalho ────────────────────────────────────────────────────────── */
+
+.exportar-titulo {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1f2140;
+  margin: 0 0 6px;
+}
+
+.exportar-subtitulo {
+  font-size: 14px;
+  color: #77789a;
+  margin: 0;
+}
+
+/* ── Cards ────────────────────────────────────────────────────────────── */
+
+.exportar-card {
+  background: #fff;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(31, 33, 64, 0.04), 0 4px 16px rgba(31, 33, 64, 0.04);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exportar-secao-titulo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2140;
+  margin: 0;
+}
+
+/* ── Filtros ──────────────────────────────────────────────────────────── */
+
+.exportar-filtros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 16px;
+  align-items: end;
+}
+
+.exportar-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exportar-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2140;
+}
+
+.exportar-input-wrapper {
+  position: relative;
+}
+
+.exportar-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1f2140;
+  background: #fff;
+  border: 1px solid #e4e5ef;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.exportar-input:focus {
+  border-color: var(--cor-primaria, #4f52d9);
+  box-shadow: 0 0 0 3px rgba(79, 82, 217, 0.15);
+}
+
+.exportar-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.exportar-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #55577a;
+}
+
+.exportar-input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+/* ── Hint ─────────────────────────────────────────────────────────────── */
+
+.exportar-hint {
+  font-size: 12px;
+  color: #8a8bab;
+  margin: 0;
+}
+
+.exportar-hint--tabela {
+  margin-top: 4px;
+}
+
+/* ── Pré-visualização ─────────────────────────────────────────────────── */
+
+.exportar-previsualicao-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exportar-badge {
+  background: #eeedfd;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cor-primaria, #4f52d9);
+  padding: 6px 14px;
+  text-transform: capitalize;
+}
+
+.exportar-vazio {
+  font-size: 14px;
+  color: #8a8bab;
+  text-align: center;
+  padding: 32px 0;
+  margin: 0;
+}
+
+/* ── Tabela ───────────────────────────────────────────────────────────── */
+
+.exportar-tabela-wrapper {
+  overflow-x: auto;
+  margin: 0 -24px;
+}
+
+.exportar-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.exportar-tabela thead tr {
+  background: #f7f7fc;
+}
+
+.exportar-tabela th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: #8a8bab;
+  white-space: nowrap;
+}
+
+.exportar-tabela th:first-child,
+.exportar-tabela td:first-child {
+  padding-left: 24px;
+}
+
+.exportar-tabela th:last-child,
+.exportar-tabela td:last-child {
+  padding-right: 24px;
+}
+
+.exportar-tabela td {
+  padding: 14px 16px;
+  color: #1f2140;
+  vertical-align: middle;
+}
+
+.exportar-tabela tbody tr.par   { background: #fff; }
+.exportar-tabela tbody tr.impar { background: #fafafe; }
+
+.exportar-tabela-data {
+  color: #77789a;
+  white-space: nowrap;
+}
+
+.exportar-tabela-descricao {
+  font-weight: 500;
+}
+
+.exportar-tabela-categoria {
+  color: #77789a;
+  font-size: 13px;
+}
+
+.exportar-tabela-valor {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+th.exportar-tabela-valor {
+  font-weight: 500;
+}
+
+.exportar-tabela-valor--positivo { color: #15803d; }
+.exportar-tabela-valor--negativo { color: #1f2140; }
+
+/* ── Badges Entrada / Saída ───────────────────────────────────────────── */
+
+.exportar-tipo-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.exportar-tipo-badge--entrada {
+  background: #e6f6ec;
+  color: #15803d;
+}
+
+.exportar-tipo-badge--saida {
+  background: #fdf1e3;
+  color: #b45f0a;
+}
+
+/* ── Botões ───────────────────────────────────────────────────────────── */
+
+.exportar-botoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exportar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+
+.exportar-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.exportar-btn--primario {
+  background: var(--cor-primaria, #4f52d9);
+  color: #fff;
+  border: 1px solid var(--cor-primaria, #4f52d9);
+}
+
+.exportar-btn--primario:hover:not(:disabled) {
+  background: var(--cor-primaria-hover, #4144bf);
+  border-color: var(--cor-primaria-hover, #4144bf);
+}
+
+.exportar-btn--secundario {
+  background: #fff;
+  color: var(--cor-primaria, #4f52d9);
+  border: 1px solid var(--cor-primaria, #4f52d9);
+}
+
+.exportar-btn--secundario:hover:not(:disabled) {
+  background: #f1f1fd;
+}
+
+/* ── Instrução ────────────────────────────────────────────────────────── */
+
+.exportar-instrucao {
+  font-size: 12px;
+  color: #8a8bab;
+  margin: 0;
+}
+
+.exportar-instrucao code {
+  font-family: "Courier New", Courier, monospace;
+  background: #f4f4fa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* ── Responsividade ───────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .exportar-conteudo { padding: 20px 16px; }
+  .exportar-filtros  { grid-template-columns: 1fr; }
+  .exportar-botoes   { flex-direction: column; }
+  .exportar-btn      { width: 100%; }
+}

@@ -1,0 +1,286 @@
+.nova-saida__overlay {
+  --ns-roxo: #5157dc;
+  --ns-roxo-hover: #4147c4;
+  --ns-vermelho: #c2455b;
+  --ns-vermelho-fundo: #fcebee;
+  --ns-texto: #1e2140;
+  --ns-suave: #7a7f9a;
+  --ns-borda: #e6e8f2;
+  --ns-erro: #d9534f;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.nova-saida__overlay *,
+.nova-saida__overlay *::before,
+.nova-saida__overlay *::after {
+  box-sizing: border-box;
+}
+
+.nova-saida {
+  width: 396px;
+  max-width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 27px;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.nova-saida__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nova-saida__icone {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--ns-vermelho-fundo);
+  color: var(--ns-vermelho);
+}
+
+.nova-saida__fechar {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7090;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nova-saida__fechar:hover {
+  background: #f0f1f8;
+  color: var(--ns-texto);
+}
+
+.nova-saida__titulo {
+  margin: 20px 0 0;
+  color: var(--ns-texto);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.3px;
+}
+
+.nova-saida__subtitulo {
+  margin: 3px 0 0;
+  color: var(--ns-suave);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.nova-saida__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.nova-saida__campo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.nova-saida__campo label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ns-texto);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.nova-saida__campo label span {
+  color: var(--ns-suave);
+  font-weight: 400;
+}
+
+.nova-saida__input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--ns-borda);
+  border-radius: 11px;
+  outline: none;
+  background: #fff;
+  color: var(--ns-texto);
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-saida__input:focus {
+  border-color: var(--ns-roxo);
+  box-shadow: 0 0 0 1px var(--ns-roxo);
+}
+
+.nova-saida__input--erro {
+  border-color: var(--ns-erro) !important;
+  box-shadow: 0 0 0 1px var(--ns-erro) !important;
+}
+
+.nova-saida__valor {
+  display: flex;
+  height: 51px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid var(--ns-borda);
+  border-radius: 11px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-saida__valor:focus-within {
+  border-color: var(--ns-roxo);
+  box-shadow: 0 0 0 1px var(--ns-roxo);
+}
+
+.nova-saida__valor--erro,
+.nova-saida__valor--erro:focus-within {
+  border-color: var(--ns-erro);
+  box-shadow: 0 0 0 1px var(--ns-erro);
+}
+
+.nova-saida__moeda {
+  color: var(--ns-suave);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.nova-saida__valor-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ns-texto);
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.nova-saida__valor-input::placeholder {
+  color: #c4c7d9;
+}
+
+.nova-saida__select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nova-saida__select {
+  width: 100%;
+  height: 38px;
+  appearance: none;
+  padding: 0 36px 0 12px;
+  border: 1px solid var(--ns-borda);
+  border-radius: 11px;
+  outline: none;
+  background: #fff;
+  color: var(--ns-texto);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-saida__select:focus {
+  border-color: var(--ns-roxo);
+  box-shadow: 0 0 0 1px var(--ns-roxo);
+}
+
+.nova-saida__select-icone {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  color: var(--ns-suave);
+  pointer-events: none;
+}
+
+.nova-saida__parcelamento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.nova-saida__parcelamento .nova-saida__input {
+  padding-right: 10px;
+}
+
+.nova-saida__ajuda {
+  margin: -5px 0 0;
+  color: var(--ns-suave);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.nova-saida__ajuda--parcelas {
+  margin-top: -7px;
+  line-height: 24px;
+}
+
+.nova-saida__ajuda--erro {
+  margin-top: -7px;
+  color: var(--ns-erro);
+}
+
+.nova-saida__botao {
+  width: 100%;
+  height: 38px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 11px;
+  background: var(--ns-roxo);
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.nova-saida__botao:hover:not(:disabled) {
+  background: var(--ns-roxo-hover);
+}
+
+.nova-saida__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .nova-saida__overlay {
+    padding: 12px;
+  }
+
+  .nova-saida {
+    max-height: calc(100vh - 24px);
+    padding: 22px;
+  }
+}
+
+/* Seletor de data padrão do sistema, na altura dos demais campos */
+.nova-saida__campo .seletor-data {
+  --sd-altura: 38px;
+}

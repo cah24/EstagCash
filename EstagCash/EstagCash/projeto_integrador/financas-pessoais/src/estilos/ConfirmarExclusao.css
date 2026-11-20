@@ -1,0 +1,124 @@
+.confirmar-exclusao__overlay {
+  --ce-roxo: #4f52e0;
+  --ce-texto: #1e2140;
+  --ce-suave: #7a7f9a;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.confirmar-exclusao__overlay *,
+.confirmar-exclusao__overlay *::before,
+.confirmar-exclusao__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card ----- */
+.confirmar-exclusao {
+  width: 480px;
+  max-width: 100%;
+  padding: 28px 28px 42px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.confirmar-exclusao__titulo {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--ce-texto);
+}
+
+.confirmar-exclusao__texto {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ce-suave);
+}
+
+/* ----- Resumo do lançamento ----- */
+.confirmar-exclusao__resumo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  margin-top: 25px;
+  padding: 0 36px 0 16px;
+  border-radius: 12px;
+  background: #f7f8fd;
+}
+
+.confirmar-exclusao__resumo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.confirmar-exclusao__resumo-info strong {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--ce-texto);
+}
+
+.confirmar-exclusao__resumo-info span {
+  font-size: 11px;
+  line-height: 14px;
+  color: var(--ce-suave);
+}
+
+.confirmar-exclusao__resumo-valor {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ce-texto);
+}
+
+/* ----- Botões ----- */
+.confirmar-exclusao__acoes {
+  display: grid;
+  grid-template-columns: 1fr 138px;
+  gap: 12px;
+  margin-top: 41px;
+}
+
+.confirmar-exclusao__botao {
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.confirmar-exclusao__botao--cancelar {
+  background: var(--ce-roxo);
+  color: #ffffff;
+}
+
+.confirmar-exclusao__botao--cancelar:hover {
+  background: #3d43c4;
+}
+
+.confirmar-exclusao__botao--excluir {
+  background: transparent;
+  color: var(--ce-texto);
+}
+
+.confirmar-exclusao__botao--excluir:hover {
+  background: #f4f5fb;
+}
+
+.confirmar-exclusao__botao:focus-visible {
+  outline: 2px solid var(--ce-roxo);
+  outline-offset: 2px;
+}

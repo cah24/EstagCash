@@ -1,0 +1,260 @@
+.regra {
+  flex: 1;
+  min-height: 100vh;
+  padding: 32px 40px 40px;
+  background: #f7f7fc;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #2b2640;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.regra__titulo {
+  margin: 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #1f1b3a;
+}
+
+.regra__subtitulo {
+  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8a87a0;
+}
+
+/* cabeçalho: 64px de altura, 24px até os cards */
+.regra > header {
+  height: 64px;
+}
+
+/* cards das 3 categorias: 360x244, gap 24 */
+.regra__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.regra__card {
+  min-height: 244px;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(43, 38, 64, 0.06);
+}
+
+.regra__card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 51px;
+  margin-bottom: 14px;
+}
+
+.regra__percentual {
+  font-size: 42px;
+  line-height: 51px;
+  font-weight: 700;
+}
+
+.regra__icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.regra__nome {
+  margin: 0 0 7px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #1f1b3a;
+}
+
+.regra__descricao {
+  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8a87a0;
+}
+
+.regra__exemplos {
+  margin: 0;
+  font-size: 13px;
+  line-height: 21px;
+  color: #6b6880;
+}
+
+.regra__card--necessidade .regra__percentual { color: #b08a1f; }
+.regra__card--necessidade .regra__icone { background: #fbf1d4; color: #b08a1f; }
+
+.regra__card--desejo .regra__percentual { color: #23805e; }
+.regra__card--desejo .regra__icone { background: #dff3ea; color: #23805e; }
+
+.regra__card--poupanca .regra__percentual { color: #4f7be0; }
+.regra__card--poupanca .regra__icone { background: #e4e9fb; color: #4f7be0; }
+
+/* blocos brancos: 166px de altura, padding 28 / 22 */
+.regra__bloco {
+  min-height: 166px;
+  padding: 22px 28px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(43, 38, 64, 0.06);
+}
+
+.regra__bloco-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 21px;
+  margin-bottom: 17px;
+}
+
+.regra__bloco-titulo {
+  margin: 0;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #1f1b3a;
+}
+
+.regra__renda {
+  font-size: 13px;
+  color: #8a87a0;
+}
+
+.regra__renda strong {
+  margin-left: 6px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1f1b3a;
+}
+
+/* barra do exemplo: 36px */
+.regra__barra {
+  display: flex;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.regra__segmento {
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.regra__segmento--necessidade { background: #d9a82f; }
+.regra__segmento--desejo { background: #258a63; }
+.regra__segmento--poupanca { background: #5278dd; }
+
+.regra__legenda {
+  display: flex;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8a87a0;
+}
+
+.regra__legenda span {
+  box-sizing: border-box;
+}
+
+/* passos: 3 colunas, gap 28 */
+.regra__bloco > .regra__bloco-titulo {
+  margin-bottom: 21px;
+}
+
+.regra__passos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.regra__passo {
+  display: flex;
+  gap: 12px;
+}
+
+.regra__passo-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #eeebfd;
+  color: #5b3fd9;
+  font-size: 13px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+
+.regra__passo strong {
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+  color: #1f1b3a;
+}
+
+.regra__passo p {
+  margin: 7px 0 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #8a87a0;
+}
+
+/* aviso: 30px de altura */
+.regra__aviso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  color: #8a87a0;
+}
+
+/* botão: 179x44 */
+.regra__voltar {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 9px;
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  background: #5b3fd9;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.regra__voltar:hover {
+  background: #4b31bd;
+}
+
+@media (max-width: 900px) {
+  .regra__cards,
+  .regra__passos {
+    grid-template-columns: 1fr;
+  }
+}

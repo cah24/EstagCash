@@ -1,0 +1,185 @@
+.nova-meta__overlay {
+  --nm-roxo: #4f52e0;
+  --nm-roxo-caixa: #eef0fc;
+  --nm-texto: #1e2140;
+  --nm-suave: #7a7f9a;
+  --nm-borda: #e3e5f0;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.nova-meta__overlay *,
+.nova-meta__overlay *::before,
+.nova-meta__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card ----- */
+.nova-meta {
+  width: 464px;
+  max-width: 100%;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.nova-meta__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nova-meta__icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--nm-roxo-caixa);
+  color: var(--nm-roxo);
+  display: grid;
+  place-items: center;
+}
+
+.nova-meta__fechar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #6b7090;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nova-meta__fechar:hover {
+  color: var(--nm-texto);
+  background: #f0f1f8;
+}
+
+.nova-meta__titulo {
+  margin-top: 23px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--nm-texto);
+}
+
+.nova-meta__subtitulo {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--nm-suave);
+}
+
+/* ----- Formulário ----- */
+.nova-meta__form {
+  margin-top: 22px;
+}
+
+.nova-meta__grupo label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--nm-texto);
+}
+
+.nova-meta__grupo--valor {
+  margin-top: 16px;
+}
+
+.nova-meta__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--nm-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--nm-texto);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-meta__input::placeholder {
+  color: var(--nm-suave);
+}
+
+.nova-meta__input:focus,
+.nova-meta__valor:focus-within {
+  border-color: var(--nm-roxo);
+  box-shadow: 0 0 0 3px rgba(79, 82, 224, 0.12);
+}
+
+/* ----- Campo de valor ----- */
+.nova-meta__valor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+  padding: 0 16px;
+  border: 1px solid var(--nm-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-meta__moeda {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--nm-suave);
+}
+
+.nova-meta__valor-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--nm-texto);
+}
+
+.nova-meta__valor-input::placeholder {
+  color: #c4c7d9;
+}
+
+/* ----- Botão ----- */
+.nova-meta__botao {
+  width: 100%;
+  height: 44px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--nm-roxo);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.nova-meta__botao:hover:not(:disabled) {
+  background: #3d43c4;
+}
+
+.nova-meta__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

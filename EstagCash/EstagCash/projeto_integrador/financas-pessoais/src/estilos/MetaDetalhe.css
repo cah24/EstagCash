@@ -1,0 +1,334 @@
+/* ----- Link "Todas as metas" ----- */
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -2px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--roxo);
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+/* ----- Card principal ----- */
+.meta-hero {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(40, 45, 120, 0.06);
+}
+
+.meta-hero__topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icone-caixa--hero {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.meta-hero__titulo h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--texto);
+}
+
+.meta-hero__titulo p {
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: var(--texto-suave);
+}
+
+.selo {
+  margin-left: auto;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: #e9ebfc;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--roxo);
+}
+
+.meta-hero__rotulo {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.meta-hero__linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-hero__valor {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  color: var(--roxo-escuro);
+}
+
+.meta-hero__acoes {
+  display: flex;
+  gap: 12px;
+}
+
+.meta-hero > aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+
+.btn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn--primario {
+  background: var(--roxo);
+  color: #fff;
+}
+
+.btn--primario:hover {
+  background: var(--roxo-escuro);
+}
+
+.btn--secundario {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  color: #5a5f80;
+}
+
+.btn--secundario:hover {
+  border-color: var(--roxo);
+  color: var(--roxo);
+}
+
+.meta-hero__alvo {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.barra--larga {
+  height: 6px;
+  margin-top: 22px;
+}
+
+.meta-hero__rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.meta-hero__realizado {
+  font-weight: 500;
+  color: var(--azul-barra);
+}
+
+/* ----- Aportes e retiradas ----- */
+.movimentos {
+  margin-top: 20px;
+  padding: 24px;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(40, 45, 120, 0.06);
+}
+
+.movimentos__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movimentos__topo h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--texto);
+}
+
+.movimentos__topo span {
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.tabela {
+  margin-top: 14px;
+}
+
+.tabela__linha {
+  display: grid;
+  grid-template-columns: 158px 1fr 150px 160px;
+  align-items: center;
+  height: 52px;
+  padding: 0 12px;
+  border-bottom: 1px solid #eef0f6;
+  font-size: 13px;
+}
+
+.tabela__linha:last-child {
+  border-bottom: none;
+}
+
+.tabela__linha--cabecalho {
+  height: 29px;
+  padding-bottom: 14px;
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+.col-data {
+  color: var(--texto-suave);
+}
+
+.col-descricao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--texto);
+}
+
+.mov-icone {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.mov-icone--aporte {
+  background: #eaf0fd;
+  color: var(--azul-barra);
+}
+
+.mov-icone--retirada {
+  background: #eef0f4;
+  color: #6b7090;
+}
+
+.col-tipo {
+  color: var(--texto-suave);
+}
+
+.col-tipo--aporte {
+  color: var(--azul-barra);
+}
+
+.col-valor {
+  text-align: right;
+  font-weight: 600;
+}
+
+.col-valor--aporte {
+  color: var(--azul-barra);
+}
+
+.col-valor--retirada {
+  color: #5a5f80;
+}
+
+/* ----- Nota final ----- */
+.nota-final {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.saldo-pagina {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.saldo-pagina > aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+/* ----- Excluir Meta ----- */
+.btn--excluir {
+  background: transparent;
+  border: 1.5px solid #e53935;
+  color: #e53935;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 16px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn--excluir:hover {
+  background: #ffeaea;
+}
+
+/* Confirmação inline de exclusão */
+.excluir-confirmacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.excluir-confirmacao span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e53935;
+  white-space: nowrap;
+}
+
+.btn--excluir-confirmar {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 14px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--excluir-confirmar:hover {
+  background: #c62828;
+}
+
+.btn--excluir-cancelar {
+  background: transparent;
+  border: 1.5px solid #ccc;
+  color: #5a5f80;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 14px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--excluir-cancelar:hover {
+  border-color: #999;
+}

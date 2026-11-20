@@ -1,0 +1,78 @@
+/* src/estilos/SeletorMes.css */
+/* Seletor de mês único do sistema (dropdown do Simulador do pós-estágio). */
+
+.seletor-mes {
+  --sm-card: #ffffff;
+  --sm-borda: #e3e5f0;
+  --sm-texto: #2a2e5a;
+  --sm-suave: #6b7090;
+  --sm-primaria: #4f52d9;
+  --sm-erro: #d92d4a;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 218px;
+  height: 42px;
+  background: var(--sm-card);
+  border: 1px solid var(--sm-borda);
+  border-radius: 12px;
+  color: var(--sm-suave);
+}
+
+.seletor-mes:focus-within {
+  border-color: var(--sm-primaria);
+  box-shadow: 0 0 0 3px rgba(79, 82, 217, 0.15);
+}
+
+.seletor-mes select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 44px;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--sm-texto);
+  cursor: pointer;
+  outline: none;
+}
+
+.seletor-mes__icone,
+.seletor-mes__seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  pointer-events: none;
+}
+
+.seletor-mes__icone { left: 14px; }
+.seletor-mes__seta { right: 14px; }
+
+/* Variação para campos de formulário: ocupa toda a largura do campo */
+.seletor-mes--bloco { width: 100%; height: 50px; }
+.seletor-mes--centro select { text-align: center; text-align-last: center; }
+
+/* Data completa: mês + dia lado a lado */
+.seletor-data {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.seletor-data > .seletor-mes { height: var(--sd-altura, 42px); }
+.seletor-data > .seletor-mes:first-child { flex: 1; min-width: 0; width: auto; }
+
+.seletor-mes--dia { width: 84px; flex: none; }
+.seletor-mes--dia select { padding: 0 32px 0 16px; }
+.seletor-mes--dia .seletor-mes__seta { right: 10px; }
+
+.seletor-mes--erro .seletor-mes,
+.seletor-mes--erro .seletor-mes:focus-within {
+  border-color: var(--sm-erro);
+  box-shadow: 0 0 0 1px var(--sm-erro);
+}

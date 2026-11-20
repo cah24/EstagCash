@@ -1,0 +1,205 @@
+.guardar-dinheiro__overlay {
+  --gd-roxo: #4f52e0;
+  --gd-roxo-caixa: #eef0fc;
+  --gd-azul: #4a7bdb;
+  --gd-texto: #1e2140;
+  --gd-suave: #7a7f9a;
+  --gd-borda: #e3e5f0;
+  --gd-erro: #d9534f;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.guardar-dinheiro__overlay *,
+.guardar-dinheiro__overlay *::before,
+.guardar-dinheiro__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card ----- */
+.guardar-dinheiro {
+  width: 464px;
+  max-width: 100%;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.guardar-dinheiro__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guardar-dinheiro__icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--gd-roxo-caixa);
+  color: var(--gd-azul);
+  display: grid;
+  place-items: center;
+}
+
+.guardar-dinheiro__fechar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #6b7090;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.guardar-dinheiro__fechar:hover {
+  color: var(--gd-texto);
+  background: #f0f1f8;
+}
+
+.guardar-dinheiro__titulo {
+  margin-top: 23px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--gd-texto);
+}
+
+.guardar-dinheiro__subtitulo {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gd-suave);
+}
+
+/* ----- Formulário ----- */
+.guardar-dinheiro__form {
+  margin-top: 23px;
+}
+
+.guardar-dinheiro__form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--gd-texto);
+}
+
+/* ----- Campo de valor ----- */
+.guardar-dinheiro__valor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+  padding: 0 16px;
+  border: 1px solid var(--gd-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.guardar-dinheiro__valor:focus-within {
+  border-color: var(--gd-roxo);
+  box-shadow: 0 0 0 1px var(--gd-roxo);
+}
+
+.guardar-dinheiro__valor--erro,
+.guardar-dinheiro__valor--erro:focus-within {
+  border-color: var(--gd-erro);
+  box-shadow: 0 0 0 1px var(--gd-erro);
+}
+
+.guardar-dinheiro__moeda {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--gd-suave);
+}
+
+.guardar-dinheiro__valor-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--gd-texto);
+}
+
+.guardar-dinheiro__valor-input::placeholder {
+  color: #c4c7d9;
+}
+
+/* ----- Saldo disponível ----- */
+.guardar-dinheiro__saldo {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--gd-suave);
+}
+
+.guardar-dinheiro__saldo--erro {
+  color: var(--gd-erro);
+}
+
+/* ----- Resumo ----- */
+.guardar-dinheiro__resumo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  margin-top: 24px;
+  padding: 0 15px 0 14px;
+  border-radius: 12px;
+  background: #edf2fd;
+}
+
+.guardar-dinheiro__resumo span {
+  font-size: 12px;
+  color: #6b7090;
+}
+
+.guardar-dinheiro__resumo strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gd-azul);
+}
+
+/* ----- Botão ----- */
+.guardar-dinheiro__botao {
+  width: 100%;
+  height: 44px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--gd-roxo);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.guardar-dinheiro__botao:hover:not(:disabled) {
+  background: #3d43c4;
+}
+
+.guardar-dinheiro__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

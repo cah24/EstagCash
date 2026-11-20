@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.renda-tela {
+  --primaria: #5056d9;
+  --primaria-escura: #4146c0;
+  --texto: #20243d;
+  --texto-suave: #757b91;
+  --placeholder: #969bae;
+  --borda: #eceef5;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6f7fb;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--texto);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.renda-tela *,
+.renda-tela *::before,
+.renda-tela *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- estrutura ---------- */
+.renda-tela__conteudo {
+  margin-top: 48px;
+  width: min(440px, calc(100% - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 48px;
+}
+
+.renda-tela__apresentacao {
+  text-align: center;
+}
+
+.renda-tela__titulo {
+  margin: 0;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+}
+
+.renda-tela__descricao {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--texto-suave);
+}
+
+.renda-tela__form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: left;
+}
+
+.renda-tela__dados {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- campos (mesmo design da tela Nome) ---------- */
+.renda-tela__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.renda-tela__rotulo {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: var(--texto);
+}
+
+.renda-tela__entrada,
+.renda-tela__moeda-wrap {
+  width: 100%;
+  height: 56px;
+  padding: 0 18px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--texto);
+  outline: none;
+}
+
+.renda-tela__entrada::placeholder,
+.renda-tela__moeda-input::placeholder {
+  color: var(--placeholder);
+}
+
+.renda-tela__entrada:focus,
+.renda-tela__moeda-wrap:focus-within {
+  border-color: var(--primaria);
+}
+
+/* campo "R$ 0,00" */
+.renda-tela__moeda-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.renda-tela__moeda {
+  color: var(--texto-suave);
+}
+
+.renda-tela__moeda-input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--texto);
+  outline: none;
+}
+
+/* remove as setinhas do input number */
+.renda-tela__entrada[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.renda-tela__entrada[type="number"]::-webkit-outer-spin-button,
+.renda-tela__entrada[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.renda-tela__recorrencia {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+.renda-tela__recorrencia svg {
+  color: var(--primaria);
+}
+
+/* ---------- ações ---------- */
+.renda-tela__acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.renda-tela__botao {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primaria);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.renda-tela__botao:hover:not(:disabled) {
+  background: var(--primaria-escura);
+}
+.renda-tela__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.renda-tela__pular {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+.renda-tela__pular:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .renda-tela__titulo {
+    font-size: 28px;
+  }
+  .renda-tela__conteudo {
+    margin-top: 32px;
+  }
+}

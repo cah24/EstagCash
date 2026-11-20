@@ -1,0 +1,134 @@
+.aviso-retirada__overlay {
+  --ar-roxo: #4f52e0;
+  --ar-texto: #1e2140;
+  --ar-suave: #7a7f9a;
+  --ar-borda: #e3e5f0;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.aviso-retirada__overlay *,
+.aviso-retirada__overlay *::before,
+.aviso-retirada__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card ----- */
+.aviso-retirada {
+  width: 496px;
+  max-width: 100%;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.aviso-retirada__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aviso-retirada__icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fff3d6;
+  color: #9a6b00;
+  display: grid;
+  place-items: center;
+}
+
+.aviso-retirada__fechar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #6b7090;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.aviso-retirada__fechar:hover {
+  color: var(--ar-texto);
+  background: #f0f1f8;
+}
+
+.aviso-retirada__titulo {
+  margin-top: 23px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--ar-texto);
+}
+
+.aviso-retirada__texto {
+  margin-top: 9px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #2d3150;
+}
+
+.aviso-retirada__detalhe {
+  margin-top: 13px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--ar-suave);
+}
+
+/* ----- Botões ----- */
+.aviso-retirada__acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.aviso-retirada__botao {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.aviso-retirada__botao--secundario {
+  background: #ffffff;
+  border: 1px solid var(--ar-borda);
+  color: #5a5f80;
+}
+
+.aviso-retirada__botao--secundario:hover {
+  border-color: var(--ar-roxo);
+  color: var(--ar-roxo);
+}
+
+.aviso-retirada__botao--primario {
+  border: none;
+  background: var(--ar-roxo);
+  color: #ffffff;
+}
+
+.aviso-retirada__botao--primario:hover {
+  background: #3d43c4;
+}
+
+.aviso-retirada__botao:focus-visible {
+  outline: 2px solid var(--ar-roxo);
+  outline-offset: 2px;
+}

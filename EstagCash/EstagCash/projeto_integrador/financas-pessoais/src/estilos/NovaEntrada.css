@@ -1,0 +1,248 @@
+.nova-entrada__overlay {
+  --ne-roxo: #4f52e0;
+  --ne-roxo-hover: #3d43c4;
+  --ne-verde: #22c55e;
+  --ne-verde-caixa: #e6f7ed;
+  --ne-texto: #1e2140;
+  --ne-suave: #7a7f9a;
+  --ne-borda: #e3e5f0;
+  --ne-erro: #d9534f;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.nova-entrada__overlay *,
+.nova-entrada__overlay *::before,
+.nova-entrada__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card Principal ----- */
+.nova-entrada {
+  width: 440px;
+  max-width: 100%;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.nova-entrada__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nova-entrada__icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--ne-verde-caixa);
+  color: var(--ne-verde);
+  display: grid;
+  place-items: center;
+}
+
+.nova-entrada__fechar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #6b7090;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nova-entrada__fechar:hover {
+  color: var(--ne-texto);
+  background: #f0f1f8;
+}
+
+.nova-entrada__titulo {
+  margin-top: 23px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--ne-texto);
+}
+
+.nova-entrada__subtitulo {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ne-suave);
+}
+
+/* ----- Formulário e Campos ----- */
+.nova-entrada__form {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nova-entrada__campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nova-entrada__campo label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--ne-texto);
+}
+
+/* ----- Toggle Buttons (Salário / Renda extra) ----- */
+.nova-entrada__toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.nova-entrada__toggle-btn {
+  flex: 1;
+  height: 44px;
+  border: 1px solid var(--ne-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--ne-suave);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nova-entrada__toggle-btn--ativo {
+  border-color: var(--ne-roxo);
+  background: #eef0fc;
+  color: var(--ne-roxo);
+  font-weight: 600;
+}
+
+/* ----- Inputs de Texto e Número ----- */
+.nova-entrada__input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--ne-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ne-texto);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-entrada__input:focus {
+  border-color: var(--ne-roxo);
+  box-shadow: 0 0 0 1px var(--ne-roxo);
+}
+
+.nova-entrada__input--erro {
+  border-color: var(--ne-erro) !important;
+  box-shadow: 0 0 0 1px var(--ne-erro) !important;
+}
+
+/* ----- Campo de Valor ----- */
+.nova-entrada__valor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid var(--ne-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nova-entrada__valor:focus-within {
+  border-color: var(--ne-roxo);
+  box-shadow: 0 0 0 1px var(--ne-roxo);
+}
+
+.nova-entrada__valor--erro,
+.nova-entrada__valor--erro:focus-within {
+  border-color: var(--ne-erro);
+  box-shadow: 0 0 0 1px var(--ne-erro);
+}
+
+.nova-entrada__moeda {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ne-suave);
+}
+
+.nova-entrada__valor-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--ne-texto);
+}
+
+.nova-entrada__valor-input::placeholder {
+  color: #c4c7d9;
+}
+
+/* ----- Textos de Ajuda e Erro ----- */
+.nova-entrada__ajuda {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--ne-suave);
+}
+
+.nova-entrada__ajuda--erro {
+  color: var(--ne-erro);
+}
+
+/* ----- Botão Principal ----- */
+.nova-entrada__botao {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  background: var(--ne-roxo);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.nova-entrada__botao:hover:not(:disabled) {
+  background: var(--ne-roxo-hover);
+}
+
+.nova-entrada__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Seletor de data padrão do sistema, na altura dos demais campos */
+.nova-entrada__campo .seletor-data {
+  --sd-altura: 48px;
+}

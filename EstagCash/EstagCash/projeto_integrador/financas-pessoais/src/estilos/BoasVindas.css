@@ -1,0 +1,62 @@
+.tela-boas-vindas {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6f7fb;
+  font-family: "Inter", sans-serif;
+}
+
+.tela-boas-vindas .conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min(440px, calc(100% - 40px));
+  padding-bottom: 100px;
+  gap: 32px;
+}
+
+.tela-boas-vindas .apresentacao {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tela-boas-vindas .titulo {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #20243d;
+}
+
+.tela-boas-vindas .subtitulo {
+  margin: 0;
+  font-size: 16px;
+  color: #757b91;
+}
+
+.tela-boas-vindas .formulario {
+  width: 100%;
+}
+
+.tela-boas-vindas .botao {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background: #5056d9;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tela-boas-vindas .botao:hover {
+  background: #4146c0;
+}

@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --fundo: #f5f6fc;
+  --branco: #ffffff;
+  --roxo: #4f52e0;
+  --roxo-escuro: #3d43c4;
+  --roxo-claro: #e4e7fb;
+  --roxo-caixa: #eef0fc;
+  --azul-barra: #4a7bdb;
+  --trilho: #e8eaf3;
+  --texto: #1e2140;
+  --texto-menu: #6b7090;
+  --texto-suave: #7a7f9a;
+  --borda: #e3e5f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.metas-app {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: var(--fundo);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--texto);
+}
+
+.metas-app > aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+
+/* ================= CONTEÚDO ================= */
+.conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: 36px 40px 100px 41px;
+}
+
+.conteudo__cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.conteudo__cabecalho h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: var(--texto);
+}
+
+.conteudo__cabecalho p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+/* ----- Abas ----- */
+.abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.aba {
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--texto-menu);
+  transition: all 0.2s;
+}
+
+.aba--ativa {
+  background: var(--roxo-claro);
+  border-color: var(--roxo-claro);
+  color: var(--roxo);
+  font-weight: 600;
+}
+
+/* ----- Resumo ----- */
+.resumo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.resumo h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.resumo p {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.resumo__total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.resumo__total span {
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.resumo__total strong {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--roxo-escuro);
+}
+
+/* ----- Grade de metas ----- */
+.grade-metas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card-meta {
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(40, 45, 120, 0.06);
+}
+
+.card-meta__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-meta__titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-meta__titulo h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--texto);
+}
+
+.icone-caixa {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--roxo-caixa);
+  color: var(--azul-barra);
+  display: grid;
+  place-items: center;
+}
+
+.icone-caixa svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-meta__seta {
+  color: var(--texto-menu);
+  display: grid;
+  place-items: center;
+}
+
+.card-meta__valores {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.card-meta__guardado {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: var(--roxo-escuro);
+}
+
+.card-meta__alvo {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.card-meta__rodape {
+  margin-top: 16px;
+}
+
+.barra {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--trilho);
+  overflow: hidden;
+}
+
+.barra__preenchimento {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--azul-barra);
+  transition: width 0.4s ease;
+}
+
+.card-meta__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.card-meta__percentual {
+  font-weight: 600;
+  color: var(--azul-barra);
+}
+
+/* ----- Card "Nova meta" ----- */
+.card-nova {
+  height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1.5px dashed #cdd1ea;
+  border-radius: 20px;
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.card-nova:hover {
+  background: rgba(79, 82, 224, 0.04);
+  border-color: var(--roxo);
+}
+
+.card-nova .icone-caixa--grande {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 8px;
+  background: #e9ebfc;
+  color: var(--roxo);
+}
+
+.card-nova strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--roxo);
+}
+
+.card-nova > span:last-child {
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+/* ----- Aviso ----- */
+.aviso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 12.5px;
+  color: var(--texto-suave);
+}
+
+/* ----- Botão flutuante ----- */
+.fab {
+  position: fixed;
+  right: 40px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--roxo);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(79, 82, 224, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(79, 82, 224, 0.4);
+}
+
+/* ----- Responsivo básico ----- */
+@media (max-width: 1100px) {
+  .grade-metas {
+    grid-template-columns: 1fr;
+  }
+}
+
+.saldo-pagina {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.saldo-pagina > aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}

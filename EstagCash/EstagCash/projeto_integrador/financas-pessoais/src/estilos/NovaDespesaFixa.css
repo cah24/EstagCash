@@ -1,0 +1,253 @@
+.despesa-fixa__overlay {
+  --df-roxo: #4f52e0;
+  --df-roxo-hover: #3d43c4;
+  --df-ambar: #d97706;
+  --df-ambar-caixa: #fef3c7;
+  --df-texto: #1e2140;
+  --df-suave: #7a7f9a;
+  --df-borda: #e3e5f0;
+  --df-erro: #d9534f;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(30, 33, 80, 0.4);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.despesa-fixa__overlay *,
+.despesa-fixa__overlay *::before,
+.despesa-fixa__overlay *::after {
+  box-sizing: border-box;
+}
+
+/* ----- Card Principal ----- */
+.despesa-fixa {
+  width: 440px;
+  max-width: 100%;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(30, 33, 80, 0.25);
+}
+
+.despesa-fixa__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.despesa-fixa__icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--df-ambar-caixa);
+  color: var(--df-ambar);
+  display: grid;
+  place-items: center;
+}
+
+.despesa-fixa__fechar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #6b7090;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.despesa-fixa__fechar:hover {
+  color: var(--df-texto);
+  background: #f0f1f8;
+}
+
+.despesa-fixa__titulo {
+  margin-top: 23px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+  color: var(--df-texto);
+}
+
+.despesa-fixa__subtitulo {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--df-suave);
+}
+
+/* ----- Formulário e Campos ----- */
+.despesa-fixa__form {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.despesa-fixa__campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.despesa-fixa__campo label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--df-texto);
+}
+
+/* ----- Inputs de Texto e Número ----- */
+.despesa-fixa__input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--df-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--df-texto);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.despesa-fixa__input:focus {
+  border-color: var(--df-roxo);
+  box-shadow: 0 0 0 1px var(--df-roxo);
+}
+
+.despesa-fixa__input--erro {
+  border-color: var(--df-erro) !important;
+  box-shadow: 0 0 0 1px var(--df-erro) !important;
+}
+
+/* ----- Campo de Valor ----- */
+.despesa-fixa__valor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid var(--df-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.despesa-fixa__valor:focus-within {
+  border-color: var(--df-roxo);
+  box-shadow: 0 0 0 1px var(--df-roxo);
+}
+
+.despesa-fixa__valor--erro,
+.despesa-fixa__valor--erro:focus-within {
+  border-color: var(--df-erro);
+  box-shadow: 0 0 0 1px var(--df-erro);
+}
+
+.despesa-fixa__moeda {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--df-suave);
+}
+
+.despesa-fixa__valor-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--df-texto);
+}
+
+.despesa-fixa__valor-input::placeholder {
+  color: #c4c7d9;
+}
+
+/* ----- Select Customizado de Categoria ----- */
+.despesa-fixa__select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.despesa-fixa__select {
+  width: 100%;
+  height: 48px;
+  padding: 0 40px 0 16px;
+  border: 1px solid var(--df-borda);
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--df-texto);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.despesa-fixa__select:focus {
+  border-color: var(--df-roxo);
+  box-shadow: 0 0 0 1px var(--df-roxo);
+}
+
+.despesa-fixa__select-icone {
+  position: absolute;
+  right: 16px;
+  color: var(--df-suave);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* ----- Textos de Ajuda e Erro ----- */
+.despesa-fixa__ajuda {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--df-suave);
+}
+
+.despesa-fixa__ajuda--erro {
+  color: var(--df-erro);
+}
+
+/* ----- Botão Principal ----- */
+.despesa-fixa__botao {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  background: var(--df-roxo);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.despesa-fixa__botao:hover:not(:disabled) {
+  background: var(--df-roxo-hover);
+}
+
+.despesa-fixa__botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,591 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ============================================================
+   Tela Início — todas as classes usam o prefixo "ini-"
+   ============================================================ */
+
+.tela-inicio {
+  --primaria: #5157dc;
+  --primaria-escura: #4147c4;
+  --destaque: #3b42c2;
+  --fundo: #f6f7fc;
+  --superficie: #ffffff;
+  --texto: #1e2140;
+  --texto-suave: #6b7090;
+  --borda: #e6e8f2;
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--fundo);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+.tela-inicio *,
+.tela-inicio *::before,
+.tela-inicio *::after {
+  box-sizing: border-box;
+}
+
+.tela-inicio :where(h1, h2, h3, p, ul, li) {
+  margin: 0;
+  padding: 0;
+}
+.tela-inicio :where(ul) {
+  list-style: none;
+}
+
+.tela-inicio > aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+/* ---------- tons (verde, vermelho, âmbar, azul) ---------- */
+.ini-tom-verde {
+  --tom: #1f7a4d;
+  --tom-fundo: #e3f4ea;
+  --tom-barra: #1f8a5a;
+  --tom-uso: #1f8a5a;
+}
+.ini-tom-vermelho {
+  --tom: #c2455b;
+  --tom-fundo: #fcebee;
+}
+.ini-tom-ambar {
+  --tom: #8a6a12;
+  --tom-fundo: #fdf3d8;
+  --tom-barra: #d9a22e;
+  --tom-uso: #b58a14;
+}
+.ini-tom-azul {
+  --tom: #4a7be0;
+  --tom-fundo: #e8effd;
+  --tom-barra: #4a7be0;
+  --tom-uso: #4a7be0;
+}
+
+/* ---------- conteúdo ---------- */
+.ini-conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: 34px 40px 32px;
+}
+
+/* ---------- cabeçalho ---------- */
+.ini-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ini-titulo {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+}
+
+.ini-subtitulo {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--texto-suave);
+}
+
+.ini-mes {
+  margin-top: 9px;
+}
+
+/* ---------- alerta ---------- */
+.ini-alerta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  margin-bottom: 24px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: #ffcaca;
+  color: #a31d2b;
+}
+
+.ini-alerta-texto {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+}
+.ini-alerta-texto strong {
+  font-weight: 500;
+}
+.ini-alerta-texto span {
+  font-size: 12px;
+}
+
+.ini-alerta-acao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ---------- cartões ---------- */
+.ini-cartao {
+  background: var(--superficie);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(30, 33, 64, 0.03);
+}
+
+.ini-cartao-titulo {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--texto);
+}
+.ini-cartao-titulo.ini-forte {
+  font-weight: 600;
+}
+
+.ini-cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;
+}
+
+.ini-icone-suave {
+  display: grid;
+  place-items: center;
+  color: var(--texto-suave);
+}
+
+/* links com seta */
+.ini-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--primaria);
+  cursor: pointer;
+}
+.ini-link:hover {
+  text-decoration: underline;
+}
+.ini-link-pequeno {
+  gap: 6px;
+  font-size: 12px;
+}
+
+/* caixinha de ícone colorida */
+.ini-icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--tom-fundo);
+  color: var(--tom);
+}
+.ini-icone-pequeno {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+}
+
+/* ---------- saldo do mês ---------- */
+.ini-saldo {
+  display: grid;
+  grid-template-columns: 1fr 348px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.ini-saldo-topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+  margin-bottom: 12px;
+}
+.ini-saldo-topo .ini-cartao-titulo {
+  line-height: 20px;
+}
+
+.ini-selo {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: #e8eaff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--primaria-escura);
+}
+
+.ini-saldo-valor {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 57px;
+  letter-spacing: -0.03em;
+  color: var(--destaque);
+}
+
+.ini-saldo-texto {
+  margin: 10px 0 8px;
+  font-size: 13px;
+  line-height: 21px;
+  color: var(--texto-suave);
+}
+
+.ini-resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: center;
+  padding-left: 28px;
+  border-left: 1px solid var(--borda);
+}
+
+.ini-resumo-linha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+}
+
+.ini-resumo-rotulo {
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.ini-resumo-valor {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tom);
+}
+
+/* ---------- linha com dois cartões ---------- */
+.ini-duplo {
+  display: grid;
+  grid-template-columns: 11fr 12fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ---------- maior gasto ---------- */
+.ini-gasto {
+  padding: 22px 24px 24px;
+}
+
+.ini-gasto-corpo {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 16px;
+}
+
+.ini-donut {
+  position: relative;
+  flex-shrink: 0;
+  width: 160px;   /* era 154px — 6px a mais para a borda não ser cortada */
+  height: 160px;
+  overflow: hidden; /* impede o SVG do Recharts de vazar para fora */
+}
+
+.ini-rosca {
+  display: block;
+}
+
+.ini-donut-centro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.ini-donut-centro strong {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.02em;
+}
+.ini-donut-centro span {
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+.ini-gasto-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ini-gasto-categoria {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--primaria-escura);
+}
+
+.ini-gasto-valor {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}
+
+.ini-legenda {
+  margin-top: 8px;
+}
+.ini-legenda li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 21px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+.ini-legenda-ponto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.ini-legenda-pct {
+  margin-left: auto;
+}
+
+/* ---------- regra 50/30/20 ---------- */
+.ini-regra {
+  padding: 20px 24px 12px;
+}
+
+.ini-chip-ajuda {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 8px;
+  background: #e8eaff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primaria-escura);
+  cursor: pointer;
+}
+
+.ini-regra-base {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 15px;
+  color: var(--texto-suave);
+}
+
+.ini-regra-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ini-regra-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 16px;
+}
+.ini-regra-linha p {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+.ini-regra-linha strong {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--texto);
+}
+.ini-regra-uso {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tom-uso);
+}
+
+.ini-barra {
+  position: relative;
+  height: 6px;
+  margin-top: 6px;
+  border-radius: 3px;
+  background: #eceef6;
+}
+.ini-barra-preenchimento {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--tom-barra);
+}
+.ini-barra-marca {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 2px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: #5a5e78;
+}
+
+.ini-regra-legenda {
+  margin-top: 7px;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--texto-suave);
+}
+
+/* ---------- últimas movimentações ---------- */
+/* margem à direita para o botão "+" flutuante não ficar por cima */
+.ini-ultimas {
+  margin-right: 88px;
+  padding: 12px 24px;
+  border-radius: 20px;
+}
+
+.ini-ultimas-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20px;
+}
+.ini-ultimas-topo .ini-cartao-titulo {
+  line-height: 20px;
+}
+
+.ini-movimentos {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 8px;
+}
+
+.ini-movimento {
+  display: grid;
+  grid-template-columns: 1fr 282px 140px;
+  align-items: center;
+  height: 24px;
+}
+
+.ini-movimento-nome {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--texto);
+}
+
+.ini-movimento-meta {
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+.ini-movimento-valor {
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tom);
+}
+
+/* ---------- botão flutuante ---------- */
+.ini-fab {
+  position: fixed;
+  right: 40px;
+  bottom: 24px;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--primaria);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(81, 87, 220, 0.35);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ini-fab:hover {
+  background: var(--primaria-escura);
+}
+
+.tela-inicio button:focus-visible {
+  outline: 3px solid rgba(81, 87, 220, 0.4);
+  outline-offset: 2px;
+}
+
+/* ---------- telas menores ---------- */
+@media (max-width: 1100px) {
+  .ini-conteudo {
+    padding: 28px 24px 96px;
+  }
+  .ini-saldo {
+    grid-template-columns: 1fr;
+  }
+  .ini-resumo {
+    margin-top: 24px;
+    padding: 20px 0 0;
+    border-left: none;
+    border-top: 1px solid var(--borda);
+    align-self: stretch;
+  }
+  .ini-duplo {
+    grid-template-columns: 1fr;
+  }
+  .ini-ultimas {
+    margin-right: 0;
+  }
+  .ini-movimento {
+    grid-template-columns: 1fr auto;
+  }
+  .ini-movimento-meta {
+    display: none;
+  }
+}
+
+.saldo-pagina {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.saldo-pagina > aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
